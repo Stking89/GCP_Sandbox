@@ -1,0 +1,18 @@
+steps:
+  # 1. Initialize Terraform
+  - name: 'Terraform Init'
+    id: terraform-init
+    entrypoint: terraform
+    args: ['init']
+
+  # 2. Run security scan
+  - name: 'Security Scan'
+    id: tfsec
+    entrypoint: tfsec
+    args: ['.']  # Scan all Terraform files in the current directory
+
+  # 3. Terraform Plan
+  - name: 'Terraform Plan'
+    id: terraform-plan
+    entrypoint: terraform
+    args: ['plan']
