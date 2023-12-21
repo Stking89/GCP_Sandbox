@@ -9,7 +9,8 @@ steps:
 # Pull the Terraform image
 - name: 'gcr.io/cloud-builders/docker'
   args:
-  - pull hashicorp/terraform:latest
+  - pull
+  - hashicorp/terraform:latest  # Replace with desired version if needed
 
 # Run Terraform commands
 - name: 'hashicorp/terraform'
