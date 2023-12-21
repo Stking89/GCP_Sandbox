@@ -18,6 +18,6 @@ resource "google_cloudbuild_trigger" "inf_trigger" {
   included_files = ["inf-triggers/pull-request.yamll"]  // Path to your Cloud Build configuration file
 
   # Additional options (optional)
-  filename = "pull-request.yaml"  // Name of the build configuration file within the repository
+  filename = "inf-triggers/pull-request.yaml"  // Name of the build configuration file within the repository
 
 }
