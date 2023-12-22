@@ -5,12 +5,12 @@ steps:
      - pull
      - hashicorp/terraform:latest  
 
-  - name: 'Init'
+  - name: 'terraform'
     id: terraform-init
     entrypoint: terraform
     args: ['init']
 
-  - name: 'Plan'
+  - name: 'terraform'
     id: terraform-plan
     entrypoint: terraform
     args: ['plan']
