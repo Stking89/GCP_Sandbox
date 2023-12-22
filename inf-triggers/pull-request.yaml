@@ -1,11 +1,13 @@
 steps:
 
-  - name: 'gcr.io/cloud-builders/docker'
+  - name: 'gcr.io/cloud-builders'
     args:
     - 'pull'
     - 'us-central1-docker.pkg.dev/cr-space-invaders/docker-repo/terraform-cloudbuild-image'
+  - name: 'terraform'
     entrypoint: '/bin/bash'
     args:
      - '-c'
      - 'terraform init'
+     - 'terraform plan'
      - 'echo terraform initialized'
