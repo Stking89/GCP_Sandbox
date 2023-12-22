@@ -5,7 +5,7 @@ steps:
      - pull
      - hashicorp/terraform:latest  
 
-  - name: 'security scan'
+  - name: 'tfsec'
     entrypoint: tfsec
     args: ['.']
 
