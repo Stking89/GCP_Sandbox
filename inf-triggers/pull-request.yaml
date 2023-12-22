@@ -1,13 +1,14 @@
 steps:
-  name: 'gcr.io/cloud-builders/docker'
-  args:
-  - pull
-  - hashicorp/terraform:latest  
 
-  name: 'security scan'
-  entrypoint: tfsec
-  args: ['.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+     - pull
+     - hashicorp/terraform:latest  
 
-  name: 'Terraform Plan'
-  entrypoint: terraform 
-  args: ['plan']
+  - name: 'security scan'
+    entrypoint: tfsec
+    args: ['.']
+
+  - name: 'Terraform Plan'
+    entrypoint: terraform 
+    args: ['plan']
