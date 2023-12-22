@@ -4,4 +4,3 @@ steps:
   - id: 'us-central1-docker.pkg.dev/cr-space-invaders/docker-repo/terraform-cloudbuild-image'
   - entrypoint: bin/bash
   - args: ['init']
-    
