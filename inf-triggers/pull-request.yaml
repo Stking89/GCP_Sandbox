@@ -1,7 +1,5 @@
-dockerimage: &us-central1-docker.pkg.dev/cr-space-invaders/docker-repo/terraform-cloudbuild-image
-
 
 steps:
   # 1. Pull the Docker image from Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['pull', *dockerimage] 
+    args: ['pull', 'us-central1-docker.pkg.dev/cr-space-invaders/docker-repo/terraform-cloudbuild-image'] 
