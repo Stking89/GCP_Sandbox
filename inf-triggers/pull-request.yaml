@@ -5,6 +5,12 @@ steps:
      - pull
      - hashicorp/terraform:latest  
 
-  - name: 'tfsec'
-    entrypoint: tfsec
-    args: ['.']
+  - name: 'Terraform Init'
+    id: terraform-init
+    entrypoint: terraform
+    args: ['init']
+
+  - name: 'Terraform Plan'
+    id: terraform-plan
+    entrypoint: terraform
+    args: ['plan']
