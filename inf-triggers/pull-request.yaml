@@ -2,6 +2,6 @@ steps:
   # 1. Pull the Docker image from Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
     args: ['pull', 'us-central1-docker.pkg.dev/cr-space-invaders/docker-repo/terraform-cloudbuild-image'] 
-  - name: 'terraform'
+  - name: 'run'
     entrypoint: '/bin/bash'
     args: ['-C', 'terraform init', 'terraform plan']
