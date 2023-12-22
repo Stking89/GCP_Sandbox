@@ -1,19 +1,13 @@
 steps:
-
-# Authenticate with Google Cloud
-- name: 'gcr.io/cloud-builders/gcloud'
-  args:
-  - auth
-  - configure-docker
-
-# Pull the Terraform image
-- name: 'gcr.io/cloud-builders/docker'
+  name: 'gcr.io/cloud-builders/docker'
   args:
   - pull
-  - hashicorp/terraform:latest  # Replace with desired version if needed
+  - hashicorp/terraform:latest  
 
-# Run Terraform commands
-- name: 'hashicorp/terraform'
-  args:
-  - init
-  - plan
+  name: 'security scan'
+  entrypoint: tfsec
+  args: ['.']
+
+  name: 'Terraform Plan'
+  entrypoint: terraform 
+  args: ['plan']
