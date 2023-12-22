@@ -1,10 +1,6 @@
 steps:
-
-  - id: 'gcr.io/cloud-builders/us-central1-docker.pkg.dev/cr-space-invaders/docker-repo/terraform-cloudbuild-image'
-  - name: 'terraform'
+  # 1. Pull the Docker image from Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['pull', 'us-central1-docker.pkg.dev/cr-space-invaders/docker-repo/terraform-cloudbuild-image'] 
     entrypoint: '/bin/bash'
-    args:
-     - '-c'
-     - 'terraform init'
-     - 'terraform plan'
-     - 'echo terraform initialized'
+    args: [-C. 'terraform init', 'terraform plan']
