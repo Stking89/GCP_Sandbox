@@ -1,4 +1,7 @@
 steps:
 
-  - ID: 'us-central1-docker.pkg.dev/cr-space-invaders/docker-repo/terraform-cloudbuild-image@sha256:614102f833748a9cf991765add37d50e1a164ca5260e45fbbcdd71e7c83cefcf'
+  - name: 'gcr.io/cloud-builders/docker'
+  - id: 'us-central1-docker.pkg.dev/cr-space-invaders/docker-repo/terraform-cloudbuild-image'
+  - entrypoint: bin/bash
+  - args: ['init']
     
