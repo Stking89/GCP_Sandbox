@@ -1,16 +1,4 @@
 steps:
 
-  - name: 'gcr.io/cloud-builders/docker'
-    args:
-     - pull
-     - hashicorp/terraform:latest  
-
-  - name: 'terraform'
-    id: terraform-init
-    entrypoint: terraform
-    args: ['init']
-
-  - name: 'terraform'
-    id: terraform-plan
-    entrypoint: terraform
-    args: ['plan']
+  - ID: 'us-central1-docker.pkg.dev/cr-space-invaders/docker-repo/terraform-cloudbuild-image@sha256:614102f833748a9cf991765add37d50e1a164ca5260e45fbbcdd71e7c83cefcf'
+    
