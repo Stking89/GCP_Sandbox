@@ -1,0 +1,15 @@
+# Terraform state files
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfstate.*.backup  
+
+# Local provider plugin cache
+.terraform/
+
+# Sensitive configuration files (optional)
+*.tfvars
+*.tfvars.json
+
+# Other sensitive files or directories (add as needed)
+secrets.tf
+credentials.tf
